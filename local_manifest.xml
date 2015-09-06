@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- remove CM repos -->
+ <remove-project name="CyanogenMod/android_bionic" />
+  <remove-project name="CyanogenMod/android_build" />
+  <remove-project name="CyanogenMod/android_packages_apps_CMUpdater" />
+  <remove-project name="CyanogenMod/android_system_core" />
+  <remove-project name="CyanogenMod/android_bootable_recovery" />
+
+  <!-- OpenDesireProject -->
+  <project path="bionic" name="OpenDesireProject/android_bionic" revision="cm-12.1" />
+  <project path="build" name="OpenDesireProject/android_build" revision="cm-12.1">
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
+
+    <project path="kernel/htc/vivo" name="szezso/android_kernel_htc_msm7x30" revision="cm-12.1" />
+    <project path="device/htc/vivo" name="szezso/android_device_htc_vivo" revision="cm-12.1" />
+    <project path="vendor/htc/vivo" name="szezso/proprietary_vendor_vivo" revision="cm-12.1" />
+    <project path="device/htc/common" name="CyanogenMod/android_device_htc_common" revision="gingerbread" />
+    <project name="AndroidPrimou/android_hardware_qcom_display-legacy" path="hardware/qcom/display-caf/msm7x30" revision="cm-12.1" />
+    <project name="OpenDesireProject/android_hardware_qcom_media-legacy" path="hardware/qcom/media-caf/msm7x30" revision="cm-12.1-legacy-msm7x30" />
+    <project name="OpenDesireProject/android_hardware_qcom_audio-legacy" path="hardware/qcom/audio-caf/msm7x30" revision="cm-12.1-legacy-msm7x30" />
+    <project path="system/core" name="OpenDesireProject/android_system_core" revision="cm-12.1" />
+    <project path="bootable/recovery" name="omnirom/android_bootable_recovery" remote="github" revision="android-5.1"/>
+</manifest>
