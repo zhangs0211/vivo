@@ -5,14 +5,14 @@ HTC Incredible S CM12.1
 
 此处主要说明从环境搭建到最终编译的详细步骤
 
-1、ubuntu编译环境搭建
-卸载默认安装的java版本:
+1、ubuntu编译环境搭建<br>
+卸载默认安装的java版本:<br>
 sudo apt-get purge openjdk-\* icedtea-\* icedtea6-\*
 
-安装JDK1.7:
+安装JDK1.7:<br>
 sudo apt-get install openjdk-7-jdk
 
-安装依赖包：
+安装依赖包：<br>
 sudo apt-get install git gnupg ccache lzop flex bison gperf build-essential zip curl zlib1g-dev zlib1g-dev:i386 libc6-dev lib32ncurses5-dev x11proto-core-dev libx11-dev:i386 libreadline6-dev:i386 lib32z1-dev libgl1-mesa-glx:i386 libgl1-mesa-dev g++-multilib  tofrodos python-markdown libxml2-utils xsltproc libreadline6-dev lib32readline-gplv2-dev libncurses5-dev bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev squashfs-tools pngcrush schedtool dpkg-dev
 
 2、下载代码
