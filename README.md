@@ -56,14 +56,14 @@ git://aosp.tuna.tsinghua.edu.cn/android/git-repo.git/
 编译环境相关配置<br>
 
 <html>
-    <title>#!/bin/bash</title>
-    <title>export PATH=/cyanogenmod/bin:$PATH</title>
-    <title>export PATH=/cyanogenmod/android-sdk/platform-tools:$PATH</title>
-    <title>export PATH=/usr/local/bin:$PATH</title>
-    <title>export LC_CTYPE=C</title>
-    <title>export LANG=C</title>
-    <title>export USE_CCACHE=1</title>
-    <title>export CCACHE_DIR=/cyanogenmod/.ccache</title>
+    <title>#!/bin/bash
+    export PATH=/cyanogenmod/bin:$PATH
+    export PATH=/cyanogenmod/android-sdk/platform-tools:$PATH
+    export PATH=/usr/local/bin:$PATH
+    export LC_CTYPE=C
+    export LANG=C
+    export USE_CCACHE=1
+    export CCACHE_DIR=/cyanogenmod/.ccache
 </html>
 
 设置ccache大小
