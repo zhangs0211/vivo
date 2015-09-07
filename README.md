@@ -15,54 +15,55 @@ sudo apt-get install openjdk-7-jdk
 安装依赖包：<br>
 sudo apt-get install git gnupg ccache lzop flex bison gperf build-essential zip curl zlib1g-dev zlib1g-dev:i386 libc6-dev lib32ncurses5-dev x11proto-core-dev libx11-dev:i386 libreadline6-dev:i386 lib32z1-dev libgl1-mesa-glx:i386 libgl1-mesa-dev g++-multilib  tofrodos python-markdown libxml2-utils xsltproc libreadline6-dev lib32readline-gplv2-dev libncurses5-dev bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev squashfs-tools pngcrush schedtool dpkg-dev
 
-2、下载代码
-curl https://storage.googleapis.com/git-repo-downloads/repo > bin/repo
-chmod a+x bin/repo
-mkdir -p cm12.1
-cd cm12.1
-repo init -u git://github.com/CyanogenMod/android.git -b cm-12.1
-mkdir -p .repo/local_manifests
-git clone https://github.com/zhangs0211/vivo.git .repo/local_manifests
-repo sync -j8
+2、下载代码<br>
+curl https://storage.googleapis.com/git-repo-downloads/repo > bin/repo<br>
+chmod a+x bin/repo<br>
+mkdir -p cm12.1<br>
+cd cm12.1<br>
+repo init -u git://github.com/CyanogenMod/android.git -b cm-12.1<br>
+mkdir -p .repo/local_manifests<br>
+git clone https://github.com/zhangs0211/vivo.git .repo/local_manifests<br>
+repo sync -j8<br>
 
 
-编辑repo文件，替换默认的代码源
-REPO_URL = ‘https://gerrit.googlesource.com/git-repo‘
-修改为
-REPO_URL = ‘git://aosp.tuna.tsinghua.edu.cn/android/git-repo‘
+编辑repo文件，替换默认的代码源<br>
+REPO_URL = ‘https://gerrit.googlesource.com/git-repo‘<br>
+修改为<br>
+REPO_URL = ‘git://aosp.tuna.tsinghua.edu.cn/android/git-repo‘<br>
 
-替换.repo/manifest.xml中已有的AOSP源代码的remote
-<remote name="aosp" 
-fetch=".." 
-review="https://android-review.googlesource.com/" />
-修改为
-<remote name="aosp" 
-fetch="git://aosp.tuna.tsinghua.edu.cn/android/" 
-review="https://android-review.googlesource.com/" />
+替换.repo/manifest.xml中已有的AOSP源代码的remote<br>
+<remote name="aosp" <br>
+fetch=".." <br>
+review="https://android-review.googlesource.com/" /><br>
+修改为<br>
+<remote name="aosp" <br>
+fetch="git://aosp.tuna.tsinghua.edu.cn/android/" <br>
+review="https://android-review.googlesource.com/" /><br>
 
-下载repo失败的话，可以使用国内的路径
+下载repo失败的话，可以使用国内的路径<br>
 git://aosp.tuna.tsinghua.edu.cn/android/git-repo.git/
 
-同样的如果需要更像Android SDK可以修改使用代理
+同样的如果需要更像Android SDK可以修改使用代理<br>
 - 启动 Android SDK Manager ，打开主界面，依次选择「Tools」、「Options...」，弹出『Android SDK Manager - Settings』窗口；
 - 在『Android SDK Manager - Settings』窗口中，在「HTTP Proxy Server」和「HTTP Proxy Port」输入框内填入mirrors.neusoft.edu.cn和80，并且选中「Force https://... sources to be fetched using http://...」复选框。设置完成后单击「Close」按钮关闭『Android SDK Manager - Settings』窗口返回到主界面；
 - 依次选择「Packages」、「Reload」。
 
-3、编译代码
+3、编译代码<br>
 . build/envsetup.sh && brunch vivo
 
 
 
-编译环境相关配置
-#!/bin/bash                                                                                                                                                                   
- 
-export PATH=/cyanogenmod/bin:$PATH
-export PATH=/cyanogenmod/android-sdk/platform-tools:$PATH
-export PATH=/usr/local/bin:$PATH
-export LC_CTYPE=C
-export LANG=C
-export USE_CCACHE=1
-export CCACHE_DIR=/cyanogenmod/.ccache
+编译环境相关配置<br>
+<html>
+ <title>#!/bin/bash</title>
+ <title>export PATH=/cyanogenmod/bin:$PATH</title>
+ <title>export PATH=/cyanogenmod/android-sdk/platform-tools:$PATH</title>
+ <title>export PATH=/usr/local/bin:$PATH</title>
+ <title>export LC_CTYPE=C</title>
+ <title>export LANG=C</title>
+ <title>export USE_CCACHE=1</title>
+ <title>export CCACHE_DIR=/cyanogenmod/.ccache</title>
+</html>
 设置ccache大小
 prebuilts/misc/linux x86/ccache/ccache -M 20G
 使用下面命令可以观察ccache使用情况
