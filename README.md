@@ -6,10 +6,10 @@ HTC Incredible S CM12.1
 此处主要说明从环境搭建到最终编译的详细步骤
 
 1、ubuntu编译环境搭建
-卸载默认安装的java版本：
+卸载默认安装的java版本:
 sudo apt-get purge openjdk-\* icedtea-\* icedtea6-\*
 
-安装JDK1.7：
+安装JDK1.7:
 sudo apt-get install openjdk-7-jdk
 
 安装依赖包：
